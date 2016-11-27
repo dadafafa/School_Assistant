@@ -88,9 +88,16 @@ def index(request):
 
       
     username = request.session.get('username','nobody')
-    return render_to_response("myapp/index.html",{"username":username})
+    latest_shortcuts_list = itemclass.objects.order_by('-pub_date')[:100]          #begin
+        
+    return render_to_response("myapp/index.html",{"username":username,"latest_shortcuts_list":latest_shortcuts_list})
 
-
+def detail(request,itemclass_id):
+    try:
+         itemClass = itemclass.objects.get(pk=itemclass_id)
+    except itemclass.DoesNotExist:
+        raise Http404("itemclass does not exist")
+    return render(request, 'myapp/detail.html', {'itemClass': itemClass})
 
 
 def logout(request):
