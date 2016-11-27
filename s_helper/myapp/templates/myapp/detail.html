@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Select itemclass to change | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+  
+  
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+  
+  
+  
+
+
+
+
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+       
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+            
+            
+        </div>
+        <p align="center">{{ itemClass.shortcuts }}</p>
+        
+        
+    </div>
+
+
+
+
+<html>
+
+<head> 
+<meta charset="utf-8"> 
+<title>二手交易平台</title> 
+</head>
+
+
+<div id="menu" style="background-color:#C0C0C0;height:520px;width:100px;float:left;">
+<h2 style="color:black" align="center"><br><br><br><br><br><br><br><br><br><br>内<br>容</h2>
+</div>
+
+<div id="content" style="background-color:#EEEEEE;height:480px;width:500px;float:left;">
+&nbsp;&nbsp;{{ itemClass.descriptions }}
+
+
+</div>
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" style="float:left"/>
+
+</body>
+</html>
