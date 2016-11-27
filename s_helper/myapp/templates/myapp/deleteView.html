@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="/static/myapp/css/base.css" />           <!-- 此处采用的是django内部布局   -->
+<link rel="stylesheet" type="text/css" href="/static/myapp/css/login.css" />
+<meta name="robots" content="NONE,NOARCHIVE" />
+
+
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="/myapp/delete/">我的清单</a></h1>
+
+        </div>
+        <div id="user-tools">
+		    Welcome to
+                <strong>" 校园助手删除页面"</strong>.
+				 <a href="/myapp/index">&nbsp返回游览</a>
+		
+        </div>
+        
+       
+        
+    </div>
+
+    <!-- END Header -->
+		
+		
+		
+		
+	
+	<h3>{{tips}}<h3/>
+    <h1>{{ itemclass.shortcuts }}</h1>
+	
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <h2><a href="/myapp/index"> &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回游览</a></h2><br>
+<form action="{% url 'delete_deal'%}"  method="post">
+
+                   {% csrf_token %}
+                   {% for shortcuts in item_class %} 
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type="radio" name="shortcuts" id="{{ forloop.counter}}" value="{{ forloop.counter }}"  />
+				   {{forloop.counter}} .
+                   <label for="shortcuts{{ forloop.counter }}">{{shortcuts.shortcuts }}</label><br />
+                   {% endfor %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="删除选中" />
+</form><br>
+
+
+
+
+
+
+
+
