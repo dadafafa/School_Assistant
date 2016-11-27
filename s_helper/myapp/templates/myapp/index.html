@@ -1,7 +1,108 @@
-<div>
-   <h1>welcome {{username}}</h1>
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+<html lang="en-us" >
+<head>
+<title>Select itemclass to change | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+  
+  
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+  
+  
+  
+
+
+
+
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+       
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Welcome,
+                <strong>{{username}}</strong>.
+                        
    <a href="/myapp/logout/">logout</a>
    <a href="/myapp/upload/">upload</a>
-   <a href="/myapp/change_password/">change password</a>
+   <a href="/myappange_password/">change password</a>
    <a href="/myapp/delete"> delete </a>
-</div>
+
+                    
+      
+            
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+<div>
+    
+   <!--
+   <a href="/myapp/logout/" style="text-decoration:none;" ><p style="color:green" align="right">logout</p></a>
+   <a href="/myapp/upload/" style="text-decoration:none;"><p style="color:green" align="right">upload</p></a>
+   <a href="/myapp/change_password/" style="text-decoration:none;"><p style="color:green" align="right">change password</p></a>
+-->
+   </div>
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+<html>
+<head>
+<meta charset="utf-8"> 
+
+<title>二手交易平台</title>
+<style type="text/css">
+h1 {color:red;}
+h3 {color:blue;}
+</style>
+</head>
+
+<body>
+
+
+
+{% if latest_shortcuts_list %}          <!--begin-->
+    <ul>
+    {% for itemclass in latest_shortcuts_list %}
+  
+	 <form action="" >
+	 <li><a href="/myapp/{{ itemclass.id }}/"><input style="width:200px" type="button" value={{itemclass.shortcuts}}></a></li>
+	 </form>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No shortcuts are available.</p>
+{% endif %}                  <!--end-->
+
+
+
+</body>
+</html>
