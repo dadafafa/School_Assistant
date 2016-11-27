@@ -14,5 +14,6 @@ urlpatterns = [
 	url(r'^change_password/$', views.change_password,name='change_password'),
         url(r'^delete/$', views.delete,name='delete'),
         url(r'^delete_deal/$', views.delete_deal,name='delete_deal'),
+	url(r'^(?P<itemclass_id>[0-9]+)/$',views.detail,name='detail'),
 	
 ]
