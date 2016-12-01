@@ -1,0 +1,15 @@
+后端django文件：msite
+前端文件：test.py
+
+1.控制台运行ipconfig查看服务主机ip
+2.用服务主机进入msite\ shift+右键+打开控制台选项 运行 python manage.py runserver 0.0.0.0:8000
+3.在前段主机双击test.py运行（或打开控制台python test.py）
+4.输入服务主机ip以及端口号:8000
+5.根据内部提示操作
+
+
+
+问题：
+1.在已登陆情况下不登出而直接停止test.py 会导致账号被锁死，需要进入django的数据库管理界面手动修改
+2.每次询问只能返回前十个物品的简介
+3.不确定中文支持情况
